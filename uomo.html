@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collezione Uomo - Noor Essence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+
+    <style>
+        body {
+            background-color: #0a0a0a !important;
+            margin: 0;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .main-wrapper {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('sfondochisiamo.png') !important; 
+            background-size: cover !important;
+            background-position: center !important;
+            background-attachment: fixed !important;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* --- GRAPHIC NAVBAR FIX --- */
+        .navbar {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+            padding: 20px 40px !important;
+            box-sizing: border-box !important;
+            background: rgba(0, 0, 0, 0.4) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            border-radius: 20px !important;
+            border: 1px solid rgba(255, 255, 255, 0.05) !important;
+            margin-top: 20px;
+        }
+
+        .nav-logo {
+            height: 65px !important;
+            width: auto !important;
+            object-fit: contain !important;
+            display: block !important;
+        }
+
+        .nav-center-content {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            flex-grow: 1 !important;
+            text-align: center !important;
+        }
+
+        .nav-title-sparkle {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 34px !important;
+            color: #f5dc8c !important;
+            margin: 0 0 12px 0 !important;
+            letter-spacing: 4px !important;
+            text-transform: uppercase !important;
+            font-weight: 400 !important;
+        }
+
+        .nav-links {
+            display: flex !important;
+            gap: 30px !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        .nav-links a {
+            color: #ffffff !important;
+            text-decoration: none !important;
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 13px !important;
+            font-weight: 400 !important;
+            letter-spacing: 2px !important;
+            text-transform: uppercase !important;
+            transition: color 0.3s ease !important;
+        }
+
+        .nav-links a:hover {
+            color: #f5dc8c !important;
+        }
+
+        .hamburger-btn {
+            display: none !important;
+        }
+
+        /* --- PRODOTTI SOTTO --- */
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            color: #f5dc8c;
+            margin-top: 40px;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .gold-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #f5dc8c, transparent);
+            margin-bottom: 40px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            width: 90%;
+            max-width: 1200px;
+            padding-bottom: 60px;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 25px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(245, 220, 140, 0.3);
+            box-shadow: 0 20px 40px rgba(245, 220, 140, 0.1);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.5));
+        }
+
+        .product-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: #ffffff;
+            margin: 10px 0;
+            letter-spacing: 1px;
+        }
+
+        .product-tag {
+            font-size: 11px;
+            color: #f5dc8c;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: 500;
+            color: #f5dc8c;
+            margin-bottom: 20px;
+        }
+
+        /* --- IL CARRELLO AGGIORNATO (PIÙ GRANDE E IN ALTO A DESTRA) --- */
+.cart-absolute-btn {
+    position: absolute !important;
+    top: 25px !important;       /* Regolato leggermente per bilanciare la nuova grandezza */
+    right: 40px !important;     /* Allineato al bordo destro del banner */
+    font-size: 34px !important; /* AUMENTATO A 34PX per renderlo più grande e visibile! */
+    color: #ffffff !important;
+    text-decoration: none !important;
+    z-index: 9999 !important;   /* Rimane sopra i petali per essere cliccabile */
+    transition: all 0.3s ease !important;
+    cursor: pointer;
+}
+
+/* Effetto quando ci passi sopra con il mouse */
+.cart-absolute-btn:hover {
+    color: #f5dc8c !important; /* Diventa oro Noor Essence */
+    transform: scale(1.12);    /* Un leggero zoom fluido */
+}
+
+        .buy-btn {
+            background: transparent;
+            border: 1px solid #f5dc8c;
+            color: #f5dc8c;
+            padding: 10px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .buy-btn:hover {
+            background: #f5dc8c;
+            color: #0a0a0a;
+            box-shadow: 0 0 15px rgba(245, 220, 140, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 15px !important; }
+            .nav-title-sparkle { font-size: 24px !important; }
+            .nav-links { display: none !important; }
+            .hamburger-btn { display: block !important; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+    <!-- NAVBAR -->
+    <header style="width: 95%; margin-top: 20px;">
+        <nav class="navbar">
+            <img src="d:\progettositoweb\logo.png.png" alt="Noor Logo" class="nav-logo">
+            <div class="nav-center-content">
+                <h1 class="nav-title-sparkle">Noor Essence</h1>
+                <button class="hamburger-btn" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links" id="nav-menu">
+                    <a href="profumi.html">HOME</a>
+                    <a href="chisiamo.html">CHI SIAMO</a>
+                    <a href="orientali.html">ORIENTALI</a>
+                    <a href="esotici.html">ESOTICI</a>
+                    <a href="uomo.html">UOMO</a>
+                    <a href="contatti.html">CONTATTI</a>
+                </div>
+            <a href="#" class="cart-absolute-btn">🛒</a>
+        </nav>
+    </header>
+
+    <h2 class="page-title">Collezione Uomo</h2>
+    <div class="gold-divider"></div>
+
+    <!-- GRIGLIA PRODOTTI UOMO -->
+    <section class="products-grid">
+        
+        <!-- PROFUMO UOMO 1 -->
+        <div class="product-card">
+            <span class="product-tag">Oud e ambra</span>
+            <img src="d:\progettositoweb\immagini\lattafa-asad.jpg" alt="Oud Nero" class="product-img"> 
+            <h3>YARA ASAD</h3>
+            <div class="product-price">25$</div>
+            <button class="buy-btn">Aggiungi al carrello</button>
+        </div>
+
+        <!-- PROFUMO UOMO 2 -->
+        <div class="product-card">
+            <span class="product-tag">Caldo e avvolgente</span>
+            <img src="d:\progettositoweb\immagini\khamra.jfif" alt="Cuoio Intenso" class="product-img">
+            <h3>KHAMRA</h3>
+            <div class="product-price">15$</div>
+            <button class="buy-btn">Aggiungi al carrello</button>
+        </div>
+
+         <div class="product-card">
+            <span class="product-tag">Intenso e potente</span>
+            <img src="d:\progettositoweb\immagini\uomo.webp" alt="Cuoio Intenso" class="product-img">
+            <h3>NABEEL</h3>
+            <div class="product-price">15$</div>
+            <button class="buy-btn">Aggiungi al carrello</button>
+        </div>
+
+    </section>
+</div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                    hamburger.classList.toggle('open');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

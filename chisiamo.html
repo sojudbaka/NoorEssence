@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Nostra Storia - Noor Essence</title>
+    
+    <!-- Caratteri eleganti presi da Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Collega il tuo CSS principale per la Navbar e l'Hamburger -->
+    <link rel="stylesheet" href="style.css"> 
+
+    <style>
+        /* --- GRAFICA SPECIFICA PER IL CONTENUTO DI QUESTA PAGINA --- */
+        body {
+            background-color: #0a0a0a !important; /* Forza lo sfondo nero profondo */
+            margin: 0;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Sfondo con l'immagine delle rose scurita */
+        .main-wrapper {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('sfondochisiamo.png') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-attachment: fixed !important;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Il box centrale con l'effetto vetro sfocato premium */
+        .about-section {
+            margin: 60px 20px;
+            padding: 50px;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.04) !important;
+            backdrop-filter: blur(20px) !important; /* Sfoca lo sfondo dietro il testo */
+            -webkit-backdrop-filter: blur(20px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 40px !important;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6) !important;
+        }
+
+        .about-section h2 {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 45px !important;
+            color: #f5dc8c !important; /* Colore Oro Noor */
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 0;
+        }
+
+        .about-section p {
+            font-size: 19px !important;
+            line-height: 1.8 !important;
+            color: #e0e0e0 !important;
+            font-weight: 300;
+        }
+
+        /* Linea dorata sfumata sotto il titolo */
+        .gold-divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #f5dc8c, transparent) !important;
+            margin: 0 auto 35px auto;
+        }
+
+        /* Citazione elegante finale */
+        .quote {
+            font-family: 'Playfair Display', serif !important;
+            font-style: italic;
+            font-size: 23px !important;
+            color: #f5dc8c !important;
+            margin-top: 40px;
+            display: block;
+        }
+
+        /* Adattamento perfetto per il telefono */
+        @media (max-width: 768px) {
+            .about-section { padding: 35px 20px !important; margin: 40px 15px !important; }
+            .about-section h2 { font-size: 28px !important; }
+            .about-section p { font-size: 16px !important; }
+            .quote { font-size: 18px !important; }
+        }
+
+        /* --- FIX NAVBAR E ALLINEAMENTO SCRITTE --- */
+
+/* La barra ora distribuisce gli elementi in orizzontale e li centra verticalmente */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Spinge il logo a sinistra e il resto a destra */
+    align-items: center;
+    width: 100%;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.3); /* Un leggero velo scuro dietro la barra per leggere meglio */
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+}
+
+/* Regoliamo la dimensione del logo a sinistra */
+.nav-logo {
+    height: 60px; /* Cambia l'altezza se lo vuoi più grande o più piccolo */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Contenitore centrale che tiene insieme Titolo e Link */
+.nav-center-content {
+    display: flex;
+    flex-direction: column; /* Mette il titolo sopra e i link sotto, centrati */
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* Il titolo "Noor Essence" elegante e dorato */
+.nav-title-sparkle {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 32px !important;
+    color: #f5dc8c !important; /* Oro premium */
+    margin: 0 0 10px 0 !important;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Il contenitore dei link messi in fila indiana */
+.nav-links {
+    display: flex;
+    gap: 25px; /* Spazio uniforme tra un link e l'altro */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sistemiamo le scritte dei menu: via il blu brutto, diamo l'oro e il bianco */
+.nav-links a {
+    color: #ffffff !important; /* Scritte bianche per massima leggibilità */
+    text-decoration: none !important; /* Toglie la sottolineatura blu */
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+/* Effetto quando passi il mouse sopra i link */
+.nav-links a:hover {
+    color: #f5dc8c !important; /* Diventano oro quando ci passi sopra */
+}
+
+/* Nascondiamo il tasto hamburger su computer, apparirà solo su mobile */
+.hamburger-btn {
+    display: none;
+}
+
+/* --- ADATTAMENTO PER CELLULARI (MOBILE) --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px;
+    }
+    .nav-title-sparkle {
+        font-size: 24px !important;
+    }
+    .hamburger-btn {
+        display: block; /* Spunta l'hamburger solo sul telefono */
+    }
+    .nav-links {
+        display: none; /* Nasconde la lista se non si clicca l'hamburger */
+    }
+    /* Se la classe .active è attiva tramite JS, mostra i menu a tendina */
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(10, 10, 10, 0.95);
+        width: 90%;
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+}
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+    <!-- HEADER -->
+    <header style="width: 95%; margin-top: 20px;">
+        <nav class="navbar">
+            <img src="d:\progettositoweb\logo.png.png" alt="Noor Logo" class="nav-logo">
+            <div class="nav-center-content">
+                <h1 class="nav-title-sparkle" data-text="Noor Essence">Noor Essence</h1>
+                <button class="hamburger-btn" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links" id="nav-menu">
+                    <a href="chisiamo.html">CHI SIAMO</a>
+                    <a href="profumi.html">HOME</a> 
+                    <a href="orientali.html">ORIENTALI</a>
+                    <a href="esotici.html">ESOTICI</a>
+                    <a href="uomo.html">UOMO</a>
+                    <a href="contatti.html">CONTATTI</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENUTO -->
+    <section class="about-section">
+        <h2>chi siamo</h2>
+        <div class="gold-divider"></div>
+       <p>
+        Benvenuto nel mondo di <strong>Noor Essence</strong>, la tua boutique online dedicata esclusivamente al fascino dei profumi arabi. 
+        Siamo un'azienda digitale nata dalla passione per l'antica arte profumiera orientale, con l'obiettivo di portare direttamente a casa tua le fragranze più esclusive e misteriose.
+    </p>
+
+    <p>
+        Il nostro intero progetto si basa sulla ricerca delle <strong>essenze pure più pregiate</strong>: dal leggendario legno di Oud alla dolcezza avvolgente della vaniglia, fino alla delicatezza dei fiori bianchi e dell'ambra scura. Ogni profumo che trovi nella nostra collezione racconta una storia di lusso, intensità e persistenza.
+    </p>
+
+    <p>
+        Non siamo solo un negozio online, ma una vera e propria finestra sull'Oriente. Selezioniamo con cura ogni singola boccetta per garantirti fragranze uniche, pensate per chi vuole distinguersi e lasciare una scia indimenticabile.
+    </p>
+        <span class="quote">"Il profumo è l'accessorio invisibile, l'anima di ogni presenza."</span>
+    </section>
+</div>
+
+    <!-- SCRIPT HAMBURGER -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                    hamburger.classList.toggle('open');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
